@@ -1,0 +1,42 @@
+{
+  "name": "json-to-ts-types",
+  "displayName": "JSON to TS Types",
+  "description": "A VS Code extension to convert JSON to TypeScript types.",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "engines": {
+  
+  },
+  "activationEvents": [
+    "onCommand:json-to-ts-types.helloWorld"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "json-to-ts-types.helloWorld",
+        "title": "generatetypescript types"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "json-to-ts-types.helloWorld",
+          "when": "editorLangId == 'json'",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "webpack",
+    "test": "echo \"Write tests! -> https://github.com/microsoft/vscode-extension-samples/tree/main/helloworld-sample/test\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "typescript": "^4.4.3",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
